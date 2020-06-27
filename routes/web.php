@@ -18,18 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/create', function () {
 
-
-    $role = Role::create(['name' => 'doctor']);
-    $permission = Permission::create(['name' => 'manage reports']);
-
-    $permission->assignRole($role);
-});
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/add-new', 'HomeController@new')->name('new-patient');
-Route::get('/home/patent/show/{id}', 'HomeController@show')->name('show');
+Route::get('/home/show/{id}', 'HomeController@show')->name('admin.show');
 Route::post('add-patient', 'HomeController@store')->name('save-patient');
+
+Route::resource('patient','PatientController');

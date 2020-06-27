@@ -45,6 +45,7 @@ class HomeController extends Controller
     {
 
         $patient =  Patient::find($id);
+
         return view('admin.show')->with('patient',$patient);
     }
 }

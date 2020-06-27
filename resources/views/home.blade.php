@@ -20,7 +20,7 @@
                     <th scope="row">{{$patient->name}}</th>
                     <td>{{$patient->age}}</td>
                     <td>{{$patient->address}}</td>
-                    <td><a href="{{route('show',$patient->id)}}" class="btn btn-primary" >Show</a></td>
+                    <td><a href="{{route('admin.show',$patient->id)}}" class="btn btn-primary" >Show</a></td>
                 </tr>
 
                 @endforeach
